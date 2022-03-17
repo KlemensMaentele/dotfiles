@@ -43,4 +43,5 @@ sudo make install
 
 # install miscellaneous
 yay -S brave-bin
-sudo pacman -S mpv ranger neofetch
+sudo pacman -S mpv ranger neofetch tlp
+sudo systemctl enable tlp --now
