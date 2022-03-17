@@ -45,3 +45,4 @@ sudo make install
 yay -S brave-bin
 sudo pacman -S mpv ranger neofetch tlp
 sudo systemctl enable tlp --now
+pip3 install ueberzug
