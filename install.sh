@@ -1,12 +1,10 @@
 # Setup wifi before running this script with nmcli
 # run as user not root!
-# Notes : Try nvChad
-
 
 sudo pacman -Syu
 
 # Stuff you need
-sudo pacman -S git python-pip
+sudo pacman -S git
 
 # setup folders
 mkdir ~/.local/share -p
@@ -25,7 +23,8 @@ sudo pacman -S mesa libx11 xorg-server xorg-xinit libxrandr libxinerama libxft x
 yay -S nerd-fonts-jetbrains-mono
 
 # configs
-cp ~/dotfiles/configs/* ~/.config/ -r
+cp ~/dotfiles/config/* ~/.config/ -r
+chmod +x ~/.config/ranger/scope.sh # needed for ranger
 
 # ChadWM
 sudo pacman -S xorg-xsetroot imlib2
@@ -33,7 +32,12 @@ cd ~/.config
 git clone https://github.com/KlemensMaentele/chadwm --depth 1
 cd ~/.config/chadwm/chadwm
 sudo make install
-#copy fonts
+mkdir -p ~/.local/share/fonts
+cp ~/.config/chadwm/fonts/* ~/.local/share/fonts/
+# Autostart
+chmod +x ~/.config/chadwm/scripts/bar.sh ~/.config/chadwm/scripts/autostart
+# Add .bash_profile
+
 
 # ST terminal
 cd ~/.config/
@@ -43,6 +47,12 @@ sudo make install
 
 # install miscellaneous
 yay -S brave-bin
-sudo pacman -S mpv ranger neofetch tlp
+sudo pacman -S mpv ranger neofetch tlp ueberzug
 sudo systemctl enable tlp --now
-pip3 install ueberzug
+
+# nvchad
+sudo pacman -S neovim
+mkdir -p ~/.config/nvim
+cd ~/.config/nvim/
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
