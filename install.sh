@@ -34,9 +34,11 @@ cd ~/.config/chadwm/chadwm
 sudo make install
 mkdir -p ~/.local/share/fonts
 cp ~/.config/chadwm/fonts/* ~/.local/share/fonts/
+
 # Autostart
 chmod +x ~/.config/chadwm/scripts/bar.sh ~/.config/chadwm/scripts/autostart
-# Add .bash_profile
+cp ~/dotfiles/.bash_profile ~/.bash_profile
+cp ~/dotfiles/.xinitrc ~/.xinitrc
 
 
 # ST terminal
