@@ -46,6 +46,7 @@ cd ~/.config/
 git clone https://github.com/KlemensMaentele/st
 cd st
 sudo make install
+sudo apt install ncurses-term # support for 256color on ssh
 
 # install miscellaneous
 yay -S brave-bin
