@@ -1,10 +1,10 @@
 # Setup wifi before running this script with nmcli
 # run as user not root!
 
-sudo pacman -Syu
+sudo pacman -Syu --noconfirm
 
 # Stuff you need
-sudo pacman -S git
+sudo pacman -S git --noconfirm
 
 # setup folders
 mkdir ~/.local/share -p
@@ -17,7 +17,7 @@ cd ./yay
 makepkg -si
 
 # Graphical shit intel drivers
-sudo pacman -S mesa libx11 xorg-server xorg-xinit libxrandr libxinerama libxft xorg-xrdb xf86-video-intel xorg-xrandr xorg-xclipboard unclutter
+sudo pacman -S mesa libx11 xorg-server xorg-xinit libxrandr libxinerama libxft xorg-xrdb xf86-video-intel xorg-xrandr xorg-xclipboard unclutter --noconfirm
 
 # Font
 yay -S nerd-fonts-jetbrains-mono
@@ -50,7 +50,7 @@ sudo apt install ncurses-term # support for 256color on ssh
 
 # install miscellaneous
 yay -S brave-bin
-sudo pacman -S mpv ranger neofetch tlp ueberzug
+sudo pacman -S mpv ranger neofetch tlp ueberzug --noconfirm
 sudo systemctl enable tlp --now
 
 # nvchad
