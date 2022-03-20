@@ -20,10 +20,10 @@ makepkg -si
 sudo pacman -S mesa libx11 xorg-server xorg-xinit libxrandr libxinerama libxft xorg-xrdb xf86-video-intel xorg-xrandr xorg-xclipboard unclutter --noconfirm
 
 # Font
-yay -S nerd-fonts-jetbrains-mono
+yay -S nerd-fonts-jetbrains-mono --noconfirm
 
 # configs
-cp ~/dotfiles/config/* ~/.config/ -r
+cp ~/dotfiles/configs/* ~/.config/ -r
 chmod +x ~/.config/ranger/scope.sh # needed for ranger
 
 # ChadWM
@@ -46,15 +46,15 @@ cd ~/.config/
 git clone https://github.com/KlemensMaentele/st
 cd st
 sudo make install
-sudo apt install ncurses-term # support for 256color on ssh
+#sudo apt install ncurses-term # support for 256color on ssh
 
 # install miscellaneous
-yay -S brave-bin
+yay -S brave-bin --noconfirm
 sudo pacman -S mpv ranger neofetch tlp ueberzug --noconfirm
 sudo systemctl enable tlp --now
 
 # nvchad
-sudo pacman -S neovim
+sudo pacman -S neovim --noconfirm
 mkdir -p ~/.config/nvim
 cd ~/.config/nvim/
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
