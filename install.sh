@@ -82,7 +82,8 @@ echo "Done"
 echo -n "Installing neovim......"
 installpkg "neovim"
 mkdir -p ~/.config/nvim
-git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 ~/.config/nvim >/dev/null 2>&1
+cd ~/.config/nvim
+git clone https://github.com/NvChad/NvChad --depth 1 ~/.config/nvim >/dev/null 2>&1
 nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
 echo "Done"
 
@@ -90,7 +91,8 @@ echo "Done"
 echo "Installing zshell......"
 installpkg "zsh"
 pip3 install thefuck --user >/dev/null 2>&1
-mkdir ~/.config/zsh/
+mkdir ~/.config/zsh/zsh-autosuggestions -p
+mkdir ~/.config/zsh/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh/zsh-autosuggestions >/dev/null 2>$1
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/zsh-syntax-highlighting >/dev/null 2>$1
 chsh -s /usr/bin/zsh $user # setting zsh as standart shell
