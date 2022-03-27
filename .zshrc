@@ -22,13 +22,13 @@ _comp_options+=(globdots)
 alias p="sudo pacman"
 alias ss="sudo systemctl"
 alias v="nvim"
-alias sv="sudo nvim"
+alias sv="sudoedit"
 alias ls="ls -hN --color=auto"
 alias grep="grep --color=auto"
 
 
 export PATH="$PATH:$HOME/.local/bin/"
-
+export PATH="$PATH:$HOME/devel/scripts/"
 # End of lines added by compinstallsource
 
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh

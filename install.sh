@@ -52,12 +52,15 @@ mkdir -p ~/.local/share/fonts
 cp ~/.config/chadwm/fonts/* ~/.local/share/fonts/
 echo "Done"
 
-# Autostart
+# Autostart stuff
 chmod +x ~/.config/chadwm/scripts/bar.sh ~/.config/chadwm/scripts/autostart
 cp ~/dotfiles/.zshrc ~/
 cp ~/dotfiles/.xinitrc ~/
 cp ~/dotfiles/.zprofile ~/
+cp ~/dotfiles/.Xmodmap ~/
 
+# Make script folder
+mkdir ~/devel/scripts -p
 
 # ST terminal
 echo -n "Installing the terminal......"
