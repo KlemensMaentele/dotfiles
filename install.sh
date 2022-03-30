@@ -1,4 +1,4 @@
-# Setup wifi before running this script with nmcli
+#Setup wifi before running this script with nmcli
 # run as user not root!
 
 git config --global credential.helper store # Save github creds when typed in
@@ -13,6 +13,9 @@ echo "Done"
 # Stuff you need
 installpkg "git"
 installpkg "python-pip"
+installpkg "man-db"
+installpkg "pulsemixer"
+installpkg "pamixer"
 # setup folders
 mkdir ~/.local/share -p
 mkdir ~/.config/ -p
@@ -65,7 +68,7 @@ mkdir ~/devel/scripts -p
 # ST terminal
 echo -n "Installing the terminal......"
 cd ~/.config/
-git clone https://github.com/KlemensMaentele/st >/dev/null 2>&1
+git clone https://github.com/siduck/st >/dev/null 2>&1
 cd st
 sudo make install >/dev/null 2>&1
 #sudo apt install ncurses-term # support for 256color on ssh
@@ -93,11 +96,10 @@ echo "Done"
 # zsh todo add zshrc and zprofile to repo and copy them over , use zsh as standart shell
 echo "Installing zshell......"
 installpkg "zsh"
-pip3 install thefuck --user >/dev/null 2>&1
 mkdir ~/.config/zsh/zsh-autosuggestions -p
 mkdir ~/.config/zsh/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh/zsh-autosuggestions >/dev/null 2>$1
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/zsh-syntax-highlighting >/dev/null 2>$1
 chsh -s /usr/bin/zsh $user # setting zsh as standart shell
+rm ~/.bash_history ~/.bash_rc ~/.bash_profile #remove bash files we don't need anymore
 
-# add source line to zshrc

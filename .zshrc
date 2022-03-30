@@ -32,5 +32,4 @@ export PATH="$PATH:$HOME/devel/scripts/"
 # End of lines added by compinstallsource
 
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-eval $(thefuck --alias)
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
