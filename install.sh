@@ -1,6 +1,7 @@
 #Setup wifi before running this script with nmcli
 # run as user not root!
 
+fpath=$(pwd)
 git config --global credential.helper store # Save github creds when typed in
 
 installpkg(){ sudo pacman --noconfirm --needed -S "$1" >/dev/null 2>&1 ;}
@@ -11,6 +12,7 @@ sudo pacman -Syu --noconfirm >/dev/null 2>&1
 echo "Done"
 
 # Stuff you need
+echo -n "Installing dependencies......"
 installpkg "git"
 installpkg "python-pip"
 installpkg "man-db"
@@ -19,6 +21,8 @@ installpkg "pamixer"
 # setup folders
 mkdir ~/.local/share -p
 mkdir ~/.config/ -p
+mkdir ~/Music/
+echo "Done"
 
 # Install yay
 echo -n "Installing yay aur helper......"
@@ -30,7 +34,7 @@ echo "Done"
 
 # Graphical shit intel drivers
 echo -n "Installing xorg stuff......"
-sudo pacman --noconfirm --needed -S mesa libx11 xorg-server xorg-xinit libxrandr libxinerama libxft xorg-xrdb xf86-video-intel xorg-xrandr xorg-xclipboard unclutter xorg-xbacklight >/dev/null 2>&1
+sudo pacman --noconfirm --needed -S mesa libx11 xorg-server xorg-xinit libxrandr libxinerama libxft xorg-xrdb xf86-video-intel xorg-xrandr xorg-xclipboard upower >/dev/null 2>&1
 echo "Done"
 
 # Font
@@ -40,8 +44,9 @@ echo "Done"
 
 # configs
 echo -n "Copying config files......"
-cp ~/dotfiles/configs/* ~/.config/ -r
+cp $fpath/configs/* ~/.config/ -r
 chmod +x ~/.config/ranger/scope.sh # needed for ranger
+chmod +x ~/.config/cmus/update-library.sh # needed for cmus update of music library
 echo "Done"
 
 # ChadWM
@@ -57,10 +62,10 @@ echo "Done"
 
 # Autostart stuff
 chmod +x ~/.config/chadwm/scripts/bar.sh ~/.config/chadwm/scripts/autostart
-cp ~/dotfiles/.zshrc ~/
-cp ~/dotfiles/.xinitrc ~/
-cp ~/dotfiles/.zprofile ~/
-cp ~/dotfiles/.Xmodmap ~/
+cp $fpath/.zshrc ~/
+cp $fpath/.xinitrc ~/
+cp $fpath/.zprofile ~/
+cp $fpath/.Xmodmap ~/
 
 # Make script folder
 mkdir ~/devel/scripts -p
@@ -80,7 +85,7 @@ installpkgaur "brave-bin"
 echo "Done"
 
 echo -n "Installing programs....."
-sudo pacman --noconfirm --needed -S sxiv mpv ranger neofetch tlp ueberzug feh >/dev/null 2>&1
+sudo pacman --noconfirm --needed -S sxiv mpv ranger neofetch tlp ueberzug feh cmus>/dev/null 2>&1
 sudo systemctl enable tlp --now >/dev/null 2>&1
 echo "Done"
 
