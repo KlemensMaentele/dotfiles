@@ -103,8 +103,8 @@ echo "Installing zshell......"
 installpkg "zsh"
 mkdir ~/.config/zsh/zsh-autosuggestions -p
 mkdir ~/.config/zsh/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh/zsh-autosuggestions >/dev/null 2>$1
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/zsh-syntax-highlighting >/dev/null 2>$1
+cd ~/.config/zsh
+git clone https://github.com/zsh-users/zsh-autosuggestions >/dev/null 2>$1
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git >/dev/null 2>$1
 chsh -s /usr/bin/zsh $user # setting zsh as standart shell
 rm ~/.bash_history ~/.bash_rc ~/.bash_profile #remove bash files we don't need anymore
-
