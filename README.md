@@ -12,7 +12,7 @@
 
 Clone the repository
 ```
-git clone hhttps://github.com/KlemensMaentele/dotfiles/
+git clone https://github.com/KlemensMaentele/dotfiles/
 ```
 cd into the repository and run the installation script
 ```
