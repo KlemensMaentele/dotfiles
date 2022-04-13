@@ -20,7 +20,7 @@ installpkg "pulsemixer"
 installpkg "pamixer"
 # setup folders
 mkdir ~/.local/share/ -p
-mkdir ~/.config/ -p
+mkdir ~/.config/ 
 mkdir ~/Music/
 mkdir ~/devel/scripts/ -p
 echo "Done"
@@ -53,14 +53,13 @@ echo "Done"
 
 # ranger
 echo -n "Adding ranger plugins......"
-git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
+git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons >/dev/null 2>&1
 echo "Done"
 
 # ChadWM
 echo -n "Installing DWM......"
 sudo pacman --noconfirm --needed -S xorg-xsetroot imlib2 >/dev/null 2>&1
-cd ~/.config
-git clone https://github.com/KlemensMaentele/chadwm --depth 1 >/dev/null 2>&1
+git clone https://github.com/KlemensMaentele/chadwm --depth 1 ~/.config/chadwm >/dev/null 2>&1
 cd ~/.config/chadwm/chadwm
 sudo make install >/dev/null 2>&1
 mkdir -p ~/.local/share/fonts
@@ -76,9 +75,8 @@ cp $fpath/.Xmodmap ~/
 
 # ST terminal
 echo -n "Installing the terminal......"
-cd ~/.config/
-git clone https://github.com/siduck/st >/dev/null 2>&1
-cd st
+git clone https://github.com/siduck/st ~/.config/st >/dev/null 2>&1
+cd ~/.config/st 
 sudo make install >/dev/null 2>&1
 #sudo apt install ncurses-term # support for 256color on ssh
 echo "Done"
@@ -96,8 +94,6 @@ echo "Done"
 # nvchad
 echo -n "Installing neovim......"
 installpkg "neovim"
-mkdir -p ~/.config/nvim
-cd ~/.config/nvim
 git clone https://github.com/NvChad/NvChad --depth 1 ~/.config/nvim >/dev/null 2>&1
 nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
 echo "Done"
@@ -105,10 +101,7 @@ echo "Done"
 # zsh todo add zshrc and zprofile to repo and copy them over , use zsh as standart shell
 echo "Installing zshell......"
 installpkg "zsh"
-mkdir ~/.config/zsh/zsh-autosuggestions -p
-mkdir ~/.config/zsh/zsh-syntax-highlighting
-cd ~/.config/zsh
-git clone https://github.com/zsh-users/zsh-autosuggestions >/dev/null 2>$1
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git >/dev/null 2>$1
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh/zsh-autosuggestions >/dev/null 2>&1
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/zsh-syntax-highlighting >/dev/null 2>&1
 chsh -s /usr/bin/zsh $user # setting zsh as standart shell
 rm ~/.bash_history ~/.bash_rc ~/.bash_profile #remove bash files we don't need anymore
