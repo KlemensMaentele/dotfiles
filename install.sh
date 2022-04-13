@@ -1,7 +1,7 @@
 #Setup wifi before running this script with nmcli
 # run as user not root!
 
-fpath=$(pwd)
+fpath='~/.config/dotfiles'
 git config --global credential.helper store # Save github creds when typed in
 
 installpkg(){ sudo pacman --noconfirm --needed -S "$1" >/dev/null 2>&1 ;}
@@ -64,14 +64,11 @@ cd ~/.config/chadwm/chadwm
 sudo make install >/dev/null 2>&1
 mkdir -p ~/.local/share/fonts
 cp ~/.config/chadwm/fonts/* ~/.local/share/fonts/
+chmod +x ~/.config/chadwm/scripts/bar.sh ~/.config/chadwm/scripts/autostart
 echo "Done"
 
 # Autostart stuff
-chmod +x ~/.config/chadwm/scripts/bar.sh ~/.config/chadwm/scripts/autostart
-cp $fpath/.zshrc ~/
-cp $fpath/.xinitrc ~/
-cp $fpath/.zprofile ~/
-cp $fpath/.Xmodmap ~/
+cp ~/.config/dotfiles/dotfiles/* ~/
 
 # ST terminal
 echo -n "Installing the terminal......"
