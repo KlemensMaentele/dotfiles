@@ -16,7 +16,7 @@ chmod +x ~/.config/ranger/scope.sh
 chmod +x ~/.config/cmus/update-library.sh
 
 # updating ranger icon plugin
-cd ~/.config/ranger/plugins/ranger_devicons~/
+cd ~/.config/ranger/plugins/ranger_devicons/
 fetchandpull
 
 # updating DWM
