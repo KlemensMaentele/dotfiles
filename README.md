@@ -10,13 +10,13 @@
 **Only run the installscript on a freshly installed machine**
 - [X] tested on Archlinux
 
-Clone the repository
+Clone the repository into ~/.config/dotfiles
 ```
-git clone https://github.com/KlemensMaentele/dotfiles/
+git clone https://github.com/KlemensMaentele/dotfiles/ ~/.config/dotfiles
 ```
 cd into the repository and run the installation script
 ```
-cd dotfiles
+cd ~/.config/dotfiles
 bash install.sh
 ```
 This should install a working version of my desktop
