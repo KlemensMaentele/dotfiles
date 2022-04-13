@@ -19,9 +19,10 @@ installpkg "man-db"
 installpkg "pulsemixer"
 installpkg "pamixer"
 # setup folders
-mkdir ~/.local/share -p
+mkdir ~/.local/share/ -p
 mkdir ~/.config/ -p
 mkdir ~/Music/
+mkdir ~/devel/scripts/ -p
 echo "Done"
 
 # Install yay
@@ -44,9 +45,15 @@ echo "Done"
 
 # configs
 echo -n "Copying config files......"
-cp $fpath/configs/* ~/.config/ -r
+cp "$fpath"/configs/* ~/.config/ -r
+cp "$fpath"/scripts/* ~/devel/scripts/ -r # Copying scripts
 chmod +x ~/.config/ranger/scope.sh # needed for ranger
 chmod +x ~/.config/cmus/update-library.sh # needed for cmus update of music library
+echo "Done"
+
+# ranger
+echo -n "Adding ranger plugins......"
+git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
 echo "Done"
 
 # ChadWM
@@ -66,9 +73,6 @@ cp $fpath/.zshrc ~/
 cp $fpath/.xinitrc ~/
 cp $fpath/.zprofile ~/
 cp $fpath/.Xmodmap ~/
-
-# Make script folder
-mkdir ~/devel/scripts -p
 
 # ST terminal
 echo -n "Installing the terminal......"

@@ -1,0 +1,2 @@
+#!/bin/bash
+grep -v "searchhist" ~/.config/zsh/.histfile -a | grep $1 --color=auto  

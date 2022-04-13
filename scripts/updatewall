@@ -1,0 +1,4 @@
+#!/bin/bash
+rm ~/Pictures/wall/wall.png
+ln -s "$1" ~/Pictures/wall/wall.png
+feh --bg-fill ~/Pictures/wall/wall.png

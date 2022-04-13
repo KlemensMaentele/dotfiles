@@ -1,0 +1,59 @@
+#!/bin/bash
+cd ~/Music
+
+createcover() {
+  if [ 0 != `find . -type f -name "*.mp3" | wc -l` ] ; then
+    ffmpeg -i "$(find . -type f -name "*.mp3" -print -quit)" -an -c:v copy cover.jpg 
+    eyeD3 --remove-all-images *.mp3
+  else
+    ffmpeg -i "$(find . -type f -name "*.flac" -print -quit)" -an -c:v copy cover.jpg 
+    metaflac --remove --block-type=PICTURE *.flac
+  fi
+    mogrify -resize 200x200 cover.jpg 
+}
+
+
+gotintoartists() {
+for f in ~/Music/*; do  # For each Artistfolder in the Music directory go into their folder
+cd "$f"
+gotintoalbums
+cd ~/Music/
+done
+}
+
+gotintoalbums() { # 1. Problem: There is an image of the artists 2. Problem: There can be multiple CDs
+albumincludescds=false
+
+for a in *; do
+if [ -f "$a" ]; then  # When there is a file in the folder skip that
+  continue
+fi
+cd "$a"
+for h in *; do
+if [ -d "$h" ]; then # When there are multiple CDs in the Album
+  albumincludescds=true
+  cd "$h"
+  gotinosongs
+  cd ..
+fi
+done
+if [ "$albumincludescds" = true ]; then
+  cd ..
+  continue;
+fi
+gotinosongs
+cd ..
+done
+}
+
+gotinosongs() {
+if [[ 0 == `find . -type f -name "cover.jpg" | wc -l` ]]; then
+createcover
+fi
+}
+
+gotintoartists
+#remove flac with metaflac --remove --block-type=PICTURE flacfile.flac
+#remove mp3 with eyeD3 --remove-all-images filename.mp3
+#get album cover with ffmpeg -i file.mp3 -an -c:v copy cover.jpg
+#transcode album cover with mogrify -resize 200x200 cover.jpg 

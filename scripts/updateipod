@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo rsync -vrP --ignore-existing ~/Music/ ~/tmp/media/Music

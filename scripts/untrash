@@ -1,0 +1,12 @@
+#!/bin/bash
+if test -f ~/.trash/$1; then
+  pathtag=$( tail -n 1 ~/.trash/$1 )
+  sed -i '$ d' ~/.trash/$1
+elif test -d ~/.trah/$1; then
+  pathtag=$( cat ~/.trash/$1/.trashdir)
+  rm ~/.trash/$1/.trashdir
+else 
+  echo"file does not exist"
+  exit
+fi
+mv ~/.trash/$1 $pathtag --backup=numbered -v
