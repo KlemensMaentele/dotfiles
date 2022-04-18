@@ -25,7 +25,7 @@ alias nv="nvim"
 alias snv="sudoedit"
 alias ls="ls -hN --color=auto"
 alias grep="grep --color=auto"
-alias r="ranger"
+alias ra="ranger"
 
 export EDITOR=/usr/bin/nvim
 export PATH="$HOME/devel/scripts/:$PATH"
