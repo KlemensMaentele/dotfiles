@@ -15,3 +15,10 @@ class trash(Command):
     """
     def execute(self):
         subprocess.check_call(['trash', self.fm.thisfile.path ])
+class untrash(Command):                                                   
+    """
+    :untrash
+    Use untrash script
+    """
+    def execute(self):
+        subprocess.check_call(['untrash', self.fm.thisfile.basename ])
