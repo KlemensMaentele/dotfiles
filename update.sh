@@ -5,10 +5,6 @@ fetchandpull() {
 }
 yay -Syu
 
-# updateing the dotfile repo
-cd ~/.config/dotfiles
-fetchandpull
-
 # update configs and scripts
 cp ~/.config/dotfiles/configs/* ~/.config/ -r
 cp ~/.config/dotfiles/scripts/* ~/devel/scripts/ -r
@@ -27,7 +23,7 @@ sudo make install
 cp ~/.config/chadwm/fonts/* ~/.local/share/fonts/
 
 # updating dotfile stuff
-cp ~/.config/dotfiles/dotfiles/* ~/
+cp ~/.config/dotfiles/dotfiles/.* ~/
 
 # updating terminal
 cd ~/.config/st/
