@@ -12,6 +12,7 @@
 
 Clone the repository into ~/.config/dotfiles
 ```
+mkdir -p ~/.config/dotfiles
 git clone https://github.com/KlemensMaentele/dotfiles/ ~/.config/dotfiles
 ```
 cd into the repository and run the installation script
