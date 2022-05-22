@@ -1,18 +1,17 @@
 #Setup wifi before running this script with nmcli
 # run as user not root!
 
-fpath='~/.config/dotfiles'
 git config --global credential.helper store # Save github creds when typed in
 
-installpkg(){ sudo pacman --noconfirm --needed -S "$1" >/dev/null 2>&1 ;}
-installpkgaur() { sudo -u "$USER" yay -S --noconfirm "$1" >/dev/null 2>&1 ;}
+installpkg(){ sudo pacman --noconfirm --needed -S "$1" ;}
+installpkgaur() { sudo -u "$USER" yay -S --noconfirm "$1" ;}
 
-echo -n "updateing the system......"
-sudo pacman -Syu --noconfirm >/dev/null 2>&1
+printf "updateing the system......\n\n\n"
+sudo pacman -Syu --noconfirm
 echo "Done"
 
 # Stuff you need
-echo -n "Installing dependencies......"
+printf "Installing dependencies......\n\n\n"
 installpkg "git"
 installpkg "python-pip"
 installpkg "man-db"
@@ -26,79 +25,81 @@ mkdir ~/devel/scripts/ -p
 echo "Done"
 
 # Install yay
-echo -n "Installing yay aur helper......"
+printf "Installing yay aur helper......\n\n\n"
 cd ~/.local/share
-git clone https://aur.archlinux.org/yay.git >/dev/null 2>&1
+git clone https://aur.archlinux.org/yay.git
 cd ./yay
-makepkg -si --needed --noconfirm >/dev/null 2>&1
+makepkg -si --needed --noconfirm
 echo "Done"
 
 # Graphical shit intel drivers
-echo -n "Installing xorg stuff......"
-sudo pacman --noconfirm --needed -S mesa libx11 xorg-server xorg-xinit libxrandr libxinerama libxft xorg-xrdb xf86-video-intel xorg-xrandr xorg-xclipboard upower >/dev/null 2>&1
+printf "Installing xorg stuff......\n\n\n"
+sudo pacman --noconfirm --needed -S mesa libx11 xorg-server xorg-xinit libxrandr libxinerama libxft xorg-xrdb xf86-video-intel xorg-xrandr xorg-xclipboard upower
 echo "Done"
 
 # Font
-echo -n "Installing font......"
+printf "Installing font......\n\n\n"
 installpkgaur "nerd-fonts-jetbrains-mono"
 echo "Done"
 
 # configs
-echo -n "Copying config files......"
-cp "$fpath"/configs/* ~/.config/ -r
-cp "$fpath"/scripts/* ~/devel/scripts/ -r # Copying scripts
+printf "Copying config files......\n\n\n"
+cp ~/.config/dotfiles/configs/* ~/.config/ -r
+cp ~/.config/dotfiles/scripts/* ~/devel/scripts/ -r # Copying scripts
 chmod +x ~/.config/ranger/scope.sh # needed for ranger
 chmod +x ~/.config/cmus/update-library.sh # needed for cmus update of music library
 echo "Done"
 
 # ranger
-echo -n "Adding ranger plugins......"
-git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons >/dev/null 2>&1
+printf "Adding ranger plugins......\n\n\n"
+git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
 echo "Done"
 
 # ChadWM
-echo -n "Installing DWM......"
-sudo pacman --noconfirm --needed -S xorg-xsetroot imlib2 >/dev/null 2>&1
-git clone https://github.com/KlemensMaentele/chadwm --depth 1 ~/.config/chadwm >/dev/null 2>&1
+printf "Installing DWM......\n\n\n"
+sudo pacman --noconfirm --needed -S xorg-xsetroot imlib2
+git clone https://github.com/KlemensMaentele/chadwm --depth 1 ~/.config/chadwm
 cd ~/.config/chadwm/chadwm
-sudo make install >/dev/null 2>&1
+sudo make install
 mkdir -p ~/.local/share/fonts
 cp ~/.config/chadwm/fonts/* ~/.local/share/fonts/
 chmod +x ~/.config/chadwm/scripts/bar.sh ~/.config/chadwm/scripts/autostart
 echo "Done"
 
 # Autostart stuff
-cp ~/.config/dotfiles/dotfiles/* ~/
+cp ~/.config/dotfiles/dotfiles/.* ~/
 
 # ST terminal
-echo -n "Installing the terminal......"
-git clone https://github.com/siduck/st ~/.config/st >/dev/null 2>&1
+printf "Installing the terminal......\n\n\n"
+git clone https://github.com/siduck/st ~/.config/st 
 cd ~/.config/st 
-sudo make install >/dev/null 2>&1
+sudo make install 
 #sudo apt install ncurses-term # support for 256color on ssh
 echo "Done"
 
 # install miscellaneous
-echo -n "Installing Browser......"
+printf "Installing Browser......\n\n\n"
 installpkgaur "brave-bin"
 echo "Done"
 
-echo -n "Installing programs....."
-sudo pacman --noconfirm --needed -S sxiv mpv ranger neofetch tlp ueberzug feh cmus>/dev/null 2>&1
-sudo systemctl enable tlp --now >/dev/null 2>&1
+printf "Installing programs.....\n\n\n"
+sudo pacman --noconfirm --needed -S sxiv mpv ranger neofetch tlp ueberzug feh cmus
+sudo systemctl enable tlp --now
 echo "Done"
 
 # nvchad
-echo -n "Installing neovim......"
+printf "Installing neovim......\n\n\n"
 installpkg "neovim"
-git clone https://github.com/NvChad/NvChad --depth 1 ~/.config/nvim >/dev/null 2>&1
+git clone https://github.com/NvChad/NvChad --depth 1 ~/.config/nvim
 nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
 echo "Done"
 
 # zsh todo add zshrc and zprofile to repo and copy them over , use zsh as standart shell
-echo "Installing zshell......"
+printf "Installing zshell......\n\n\n"
 installpkg "zsh"
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh/zsh-autosuggestions >/dev/null 2>&1
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/zsh-syntax-highlighting >/dev/null 2>&1
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/zsh-syntax-highlighting
 chsh -s /usr/bin/zsh $user # setting zsh as standart shell
 rm ~/.bash_history ~/.bash_rc ~/.bash_profile #remove bash files we don't need anymore
+
+printf "finished"
