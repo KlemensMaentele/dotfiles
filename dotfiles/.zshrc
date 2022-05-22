@@ -48,6 +48,7 @@ alias snv="sudoedit"
 alias ls="ls -hN --color=auto"
 alias grep="grep --color=auto"
 alias ra="ranger"
+alias sp="sudo poweroff"
 
 export EDITOR=/usr/bin/nvim
 export PATH="$HOME/devel/scripts/:$PATH"
