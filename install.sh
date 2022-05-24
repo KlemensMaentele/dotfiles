@@ -68,7 +68,7 @@ echo "Done"
 
 # Autostart stuff
 cp ~/.config/dotfiles/dotfiles/.* ~/
-
+mv ~/.Xmodmap ~/.config/.Xmodmap
 # ST terminal
 printf "Installing the terminal......\n\n\n"
 git clone https://github.com/siduck/st ~/.config/st 
