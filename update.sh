@@ -24,6 +24,7 @@ cp ~/.config/chadwm/fonts/* ~/.local/share/fonts/
 
 # updating dotfile stuff
 cp ~/.config/dotfiles/dotfiles/.* ~/
+mv -f ~/.Xmodmap ~/.config/
 
 # updating terminal
 cd ~/.config/st/
