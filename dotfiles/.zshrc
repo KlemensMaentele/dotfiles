@@ -50,11 +50,16 @@ alias grep="grep --color=auto"
 alias ra="ranger"
 alias sp="sudo poweroff"
 alias please="sudo"
+alias mirror="mpv av://v4l2:/dev/video0 --profile=low-latency --untimed"
 
 export EDITOR=/usr/bin/nvim
+export TERMINAL=/usr/local/bin/st
 export PATH="$HOME/devel/scripts/:$PATH"
 
+export NNN_PLUG='t:preview-tabbed'
+export NNN_FIFO='/tmp/nnn.fifo'
 # End of lines added by compinstallsource
+
 
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
