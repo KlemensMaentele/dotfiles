@@ -12,11 +12,9 @@ echo "Done"
 
 # Stuff you need
 printf "Installing dependencies......\n\n\n"
-installpkg "git"
-installpkg "python-pip"
-installpkg "man-db"
-installpkg "pulsemixer"
-installpkg "pamixer"
+sudo pacman -S --noconfirm --needed - < pkglist.txt
+sudo systemctl enable tlp --now
+
 # setup folders
 mkdir ~/.local/share/ -p
 mkdir ~/.config/ 
@@ -30,11 +28,6 @@ cd ~/.local/share
 git clone https://aur.archlinux.org/yay.git
 cd ./yay
 makepkg -si --needed --noconfirm
-echo "Done"
-
-# Graphical shit intel drivers
-printf "Installing xorg stuff......\n\n\n"
-sudo pacman --noconfirm --needed -S mesa libx11 xorg-server xorg-xinit libxrandr libxinerama libxft xorg-xrdb xf86-video-intel xorg-xrandr xorg-xclipboard upower
 echo "Done"
 
 # Font
@@ -57,7 +50,6 @@ echo "Done"
 
 # ChadWM
 printf "Installing DWM......\n\n\n"
-sudo pacman --noconfirm --needed -S xorg-xsetroot imlib2
 git clone https://github.com/KlemensMaentele/chadwm --depth 1 ~/.config/chadwm
 cd ~/.config/chadwm/chadwm
 sudo make install
@@ -82,21 +74,15 @@ printf "Installing Browser......\n\n\n"
 installpkgaur "brave-bin"
 echo "Done"
 
-printf "Installing programs.....\n\n\n"
-sudo pacman --noconfirm --needed -S sxiv mpv ranger neofetch tlp ueberzug feh cmus
-sudo systemctl enable tlp --now
-echo "Done"
 
 # nvchad
 printf "Installing neovim......\n\n\n"
-installpkg "neovim"
 git clone https://github.com/NvChad/NvChad --depth 1 ~/.config/nvim
 nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
 echo "Done"
 
 # zsh todo add zshrc and zprofile to repo and copy them over , use zsh as standart shell
 printf "Installing zshell......\n\n\n"
-installpkg "zsh"
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/zsh-syntax-highlighting
 chsh -s /usr/bin/zsh $user # setting zsh as standart shell
