@@ -20,6 +20,7 @@ mkdir ~/.local/share/ -p
 mkdir ~/.config/ 
 mkdir ~/Music/
 mkdir ~/devel/scripts/ -p
+mkdir ~/Pictures/wallpaper/ -p
 echo "Done"
 
 # Install yay

@@ -1,4 +1,9 @@
 #!/bin/bash
-rm ~/Pictures/wall/wall.png
-ln -s "$1" ~/Pictures/wall/wall.png
-feh --bg-fill ~/Pictures/wall/wall.png
+if [ -z  "$1" ]; then 
+  feh --bg-fill ~/Pictures/wallpaper/wall.png
+  echo 'No input refreshing background'
+else
+  rm ~/Pictures/wallpaper/wall.png   
+  ln -s "$1" ~/Pictures/wallpaper/wall.png
+  feh --bg-fill ~/Pictures/wallpaper/wall.png
+fi
