@@ -79,8 +79,7 @@ echo "Done"
 
 # nvchad
 printf "Installing neovim......\n\n\n"
-git clone https://github.com/NvChad/NvChad --depth 1 ~/.config/nvim
-nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
+git clone https://github.com/LunarVim/Neovim-from-scratch.git ~/.config/nvim
 echo "Done"
 
 # zsh todo add zshrc and zprofile to repo and copy them over , use zsh as standart shell
