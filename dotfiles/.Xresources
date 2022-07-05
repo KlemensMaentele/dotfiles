@@ -11,7 +11,7 @@ st.font:         JetBrainsMono Nerd Font:style:medium:pixelsize=16
 st.borderpx: 0
 
 !- 0.1 to 0.9 = transparency
-st.alpha: 0.1
+st.alpha: 0.96
 
 *background: #181f21
 *foreground: #dadada
