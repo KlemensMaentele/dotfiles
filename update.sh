@@ -8,8 +8,6 @@ yay -Syu
 # update configs and scripts
 cp ~/.config/dotfiles/configs/* ~/.config/ -r
 cp ~/.config/dotfiles/scripts/* ~/devel/scripts/ -r
-chmod +x ~/.config/ranger/scope.sh
-chmod +x ~/.config/cmus/update-library.sh
 
 # updating ranger icon plugin
 cd ~/.config/ranger/plugins/ranger_devicons/
@@ -24,7 +22,8 @@ cp ~/.config/chadwm/fonts/* ~/.local/share/fonts/
 
 # updating dotfile stuff
 cp ~/.config/dotfiles/dotfiles/.* ~/
-mv -f ~/.Xmodmap ~/.config/
+mv ~/.Xmodmap ~/.config/
+mv ~/.Xresources ~/.config/
 
 # updating terminal
 cd ~/.config/st/
