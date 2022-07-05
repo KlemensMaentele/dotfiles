@@ -40,8 +40,6 @@ echo "Done"
 printf "Copying config files......\n\n\n"
 cp ~/.config/dotfiles/configs/* ~/.config/ -r
 cp ~/.config/dotfiles/scripts/* ~/devel/scripts/ -r # Copying scripts
-chmod +x ~/.config/ranger/scope.sh # needed for ranger
-chmod +x ~/.config/cmus/update-library.sh # needed for cmus update of music library
 echo "Done"
 
 # ranger
