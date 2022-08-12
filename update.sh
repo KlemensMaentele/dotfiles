@@ -35,5 +35,3 @@ cd ~/.config/zsh/zsh-autosuggestions/
 fetchandpull
 cd ~/.config/zsh/zsh-syntax-highlighting/
 fetchandpull
-
-echo "To update neovim: open neovim and type space + uu"

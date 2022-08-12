@@ -3,12 +3,13 @@
 1. Install script
 2. WM DWM (my ChadWM fork)
 3. ST as terminal (ChadST)
-4. nvChad as texteditor
+4. SpaceVim as texteditor
 5. Zsh shell
 
 ### Installation
 **Only run the installscript on a freshly installed machine**
 - [X] tested on Archlinux
+- [X] tested on Parabola
 
 Clone the repository into ~/.config/dotfiles
 ```
@@ -23,4 +24,4 @@ bash install.sh
 This should install a working version of my desktop
 
 ### Credits
-https://github.com/siduck/ for his chadwm build
+https://github.com/siduck/ for his chadwm and ST build

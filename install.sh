@@ -13,7 +13,7 @@ echo "Done"
 # Stuff you need
 printf "Installing dependencies......\n\n\n"
 sudo pacman -S --noconfirm --needed - < pkglist.txt
-sudo systemctl enable tlp --now
+sudo systemctl enable tlp --now # For better energy management
 
 # setup folders
 mkdir ~/.local/share/ -p
@@ -66,16 +66,15 @@ printf "Installing the terminal......\n\n\n"
 git clone https://github.com/siduck/st ~/.config/st 
 cd ~/.config/st 
 sudo make install 
-#sudo apt install ncurses-term # support for 256color on ssh
 echo "Done"
 
-# install miscellaneous
+# install browser 
 printf "Installing Browser......\n\n\n"
 installpkgaur "brave-bin"
 echo "Done"
 
 
-# nvchad
+# SpaceVim
 printf "Installing neovim......\n\n\n"
 curl -sLf https://spacevim.org/install.sh | bash
 echo "Done"
