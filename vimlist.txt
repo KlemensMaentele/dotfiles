@@ -1,0 +1,6 @@
+python-pylint
+yapf
+python-isort
+python-pynvim
+python-jedi
+clang
