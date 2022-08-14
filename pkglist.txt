@@ -45,3 +45,4 @@ xorg-xsetroot
 imlib2
 picom
 gd
+nodejs
