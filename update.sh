@@ -35,3 +35,8 @@ cd ~/.config/zsh/zsh-autosuggestions/
 fetchandpull
 cd ~/.config/zsh/zsh-syntax-highlighting/
 fetchandpull
+
+#updating neovim
+nv -c "SPUpdate"
+cp ~/.config/dotfiles/init.toml ~/.SpaceVim.d/init.toml
+
