@@ -37,6 +37,6 @@ cd ~/.config/zsh/zsh-syntax-highlighting/
 fetchandpull
 
 #updating neovim
-nv -c "SPUpdate"
+nvim -c "SPUpdate"
 cp ~/.config/dotfiles/init.toml ~/.SpaceVim.d/init.toml
 
