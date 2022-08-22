@@ -4,3 +4,7 @@ python-isort
 python-pynvim
 python-jedi
 clang
+php
+ctags
+npm
+prettier
