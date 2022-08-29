@@ -78,7 +78,7 @@ echo "Done"
 printf "Installing neovim......\n\n\n"
 curl -sLf https://spacevim.org/install.sh | bash
 cp ~/.config/dotfiles/init.toml  ~/.SpaceVim.d/init.toml # copying my spacevim config
-sudo pacman -S --noconfirm --needed - < vimlist.txt
+sudo pacman -S --noconfirm --needed - < ~/.config/dotfiles/vimlist.txt
 echo "Done"
 
 # zsh todo add zshrc and zprofile to repo and copy them over , use zsh as standart shell
