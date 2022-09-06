@@ -29,6 +29,7 @@ ueberzug
 xclip
 zsh
 zathura
+zathura-pdf-poppler
 mesa
 libx11
 xorg-server
