@@ -74,6 +74,11 @@ default_height = 30
   format_on_save = true
 
 [[layers]]
+  name = "lang#html"
+  emmet_leader_key = "<C-e>"
+  emmet_filetyps = ['html']
+
+[[layers]]
   name = "git"
 
 [[layers]]
