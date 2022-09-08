@@ -73,6 +73,9 @@ printf "Installing Browser......\n\n\n"
 installpkgaur "brave-bin"
 echo "Done"
 
+printf "Installing lf......\n\n\n"
+installpkgaur "lf-bin"
+echo "Done"
 
 # SpaceVim
 printf "Installing neovim......\n\n\n"
