@@ -33,6 +33,12 @@ zathura-pdf-poppler
 ranger
 ueberzug
 ffmpegthumbnailer
+lynx
+bat
+atool
+mediainfo
+poppler
+odt2text
 
 neovim
 python-pylint
@@ -45,6 +51,7 @@ php
 ctags
 npm
 prettier
+vscode-html-languageserver
 
 xclip
 mesa
