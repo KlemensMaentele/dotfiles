@@ -80,6 +80,7 @@ echo "Done"
 # SpaceVim
 printf "Installing neovim......\n\n\n"
 curl -sLf https://spacevim.org/install.sh | bash
+mkdir ~/.SpaceVim.d/
 cp ~/.config/dotfiles/init.toml  ~/.SpaceVim.d/init.toml # copying my spacevim config
 sudo pacman -S --noconfirm --needed - < ~/.config/dotfiles/vimlist.txt
 echo "Done"
