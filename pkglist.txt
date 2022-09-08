@@ -38,7 +38,7 @@ bat
 atool
 mediainfo
 poppler
-odt2text
+odt2txt
 
 neovim
 python-pylint
