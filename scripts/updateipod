@@ -1,2 +1,3 @@
 #!/bin/bash
 sudo rsync -vrP --ignore-existing ~/Music/ ~/tmp/media/Music
+sudo rsync -vrP --ignore-existing ~/tmp/media/Music/ ~/Music
