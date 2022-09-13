@@ -69,3 +69,4 @@ xorg-xsetroot
 imlib2
 gd
 ntfs-3g
+openssh
