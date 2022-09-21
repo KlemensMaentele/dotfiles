@@ -13,7 +13,10 @@ nodejs
 feh
 git
 sxiv
+
 mpv
+libdvdcss
+
 gparted
 qbittorrent
 htop
