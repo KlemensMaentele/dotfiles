@@ -24,7 +24,6 @@ neofetch
 imagemagick
 pamixer
 pulsemixer
-pulseaudio
 rofi
 rsync
 redshift
