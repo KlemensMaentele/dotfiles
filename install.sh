@@ -1,3 +1,4 @@
+# Clone repo into .config/dotfiles
 #Setup wifi before running this script with nmcli
 # run as user not root!
 
@@ -17,7 +18,6 @@ sudo systemctl enable tlp --now # For better energy management
 
 # setup folders
 mkdir ~/.local/share/ -p
-mkdir ~/.config/ 
 mkdir ~/Music/
 mkdir ~/devel/scripts/ -p
 mkdir ~/Pictures/wallpaper/ -p
@@ -40,11 +40,6 @@ echo "Done"
 printf "Copying config files......\n\n\n"
 cp ~/.config/dotfiles/configs/* ~/.config/ -r
 cp ~/.config/dotfiles/scripts/* ~/devel/scripts/ -r # Copying scripts
-echo "Done"
-
-# ranger
-printf "Adding ranger plugins......\n\n\n"
-git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
 echo "Done"
 
 # ChadWM
