@@ -1,2 +1,2 @@
 #!/bin/bash
-exec ~/devel/scripts/autostart
+exec ~/devel/scripts/system/autostart

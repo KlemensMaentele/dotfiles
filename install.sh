@@ -49,7 +49,6 @@ cd ~/.config/chadwm/chadwm
 sudo make install
 mkdir -p ~/.local/share/fonts
 cp ~/.config/chadwm/fonts/* ~/.local/share/fonts/
-cp ~/.config/chadwm/scripts/autostart ~/.config/chadwm/scripts/bar-desktop.sh ~/.config/chadwm/scripts/bar-laptop.sh ~/devel/scripts
 echo "Done"
 
 # Autostart stuff
