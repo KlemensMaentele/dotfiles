@@ -53,8 +53,6 @@ echo "Done"
 
 # Autostart stuff
 cp ~/.config/dotfiles/dotfiles/.* ~/
-mv ~/.Xmodmap ~/.config/.Xmodmap
-mv ~/.Xresources ~/.config/.Xresources
 # ST terminal
 printf "Installing the terminal......\n\n\n"
 git clone https://github.com/siduck/st ~/.config/st 
@@ -76,7 +74,6 @@ printf "Installing neovim......\n\n\n"
 curl -sLf https://spacevim.org/install.sh | bash
 mkdir ~/.SpaceVim.d/
 cp ~/.config/dotfiles/init.toml  ~/.SpaceVim.d/init.toml # copying my spacevim config
-sudo pacman -S --noconfirm --needed - < ~/.config/dotfiles/vimlist.txt
 echo "Done"
 
 # zsh todo add zshrc and zprofile to repo and copy them over , use zsh as standart shell
