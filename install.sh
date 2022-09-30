@@ -39,6 +39,7 @@ echo "Done"
 # configs
 printf "Copying config files......\n\n\n"
 cp ~/.config/dotfiles/configs/* ~/.config/ -r
+cp ~/.config/dotfiles/configs/.* ~/.config/ -r
 cp ~/.config/dotfiles/scripts/* ~/devel/scripts/ -r # Copying scripts
 echo "Done"
 
@@ -52,7 +53,7 @@ cp ~/.config/chadwm/fonts/* ~/.local/share/fonts/
 echo "Done"
 
 # Autostart stuff
-cp ~/.config/dotfiles/dotfiles/.* ~/
+cp ~/.config/dotfiles/dotfiles/.* ~/documents
 # ST terminal
 printf "Installing the terminal......\n\n\n"
 git clone https://github.com/siduck/st ~/.config/st 
