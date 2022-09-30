@@ -53,7 +53,7 @@ cp ~/.config/chadwm/fonts/* ~/.local/share/fonts/
 echo "Done"
 
 # Autostart stuff
-cp ~/.config/dotfiles/dotfiles/.* ~/documents
+cp ~/.config/dotfiles/dotfiles/.* ~/
 # ST terminal
 printf "Installing the terminal......\n\n\n"
 git clone https://github.com/siduck/st ~/.config/st 
