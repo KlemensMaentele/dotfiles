@@ -12,8 +12,8 @@ key                    | Do
  win + b               |  togglebar
  win + j               |  cycle active window
  win + k               |  cycle active window
- win + shift + j       |  move left
- win + shift + k       |  move right
+ win + h               |  move left
+ win + l               |  move right
  win + e               |  hidewin
  win + shift + e       |  restorewin
 
