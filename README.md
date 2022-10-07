@@ -39,6 +39,7 @@ with
 ```
 bash ~/devel/scripts/system/bar-desktop.sh &
 ```
+in the autostart script ~/devel/scripts/system/autostart.
 ### Global shortcuts
 Global shortcuts are defined in the desktop managers config file located at ~/.config/chadwm/chadwm/config.h
 The config.h file is in gitignore so your config will not get updated when pulling.
@@ -51,5 +52,5 @@ sudo make install
 ```
 To see your changes press ctrl + windows + q which will stop the desktop environment and type startx to start it again.
 ## Credits
-https://github.com/siduck/ for his chadwm and ST build
-https://github.com/LukeSmithxyz/voidrice for many configs and scripts
+- https://github.com/siduck/ for his chadwm and ST build
+- https://github.com/LukeSmithxyz/voidrice for many configs and scripts
