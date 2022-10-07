@@ -1,11 +1,16 @@
 # Clone repo into .config/dotfiles
-#Setup wifi before running this script with nmcli
+# Setup wifi before running this script with nmcli
 # run as user not root!
+
+if [[ $EUID == 0 ]] # check if user is running script as root
+then
+  echo "Don't run the script as root user"
+  exit
+fi
 
 git config --global credential.helper store # Save github creds when typed in
 
-installpkg(){ sudo pacman --noconfirm --needed -S "$1" ;}
-installpkgaur() { sudo -u "$USER" yay -S --noconfirm "$1" ;}
+installpkgaur() { sudo -u "$USER" yay -S --noconfirm "$1" ;} # function for installing packets via the aur
 
 printf "updateing the system......\n\n\n"
 sudo pacman -Syu --noconfirm
@@ -14,7 +19,7 @@ echo "Done"
 # Stuff you need
 printf "Installing dependencies......\n\n\n"
 sudo pacman -S --noconfirm --needed - < pkglist.txt
-sudo systemctl enable tlp --now # For better energy management
+sudo systemctl enable tlp --now # For better power management and longer battery runtime
 
 # setup folders
 mkdir ~/.local/share/ -p
@@ -38,8 +43,8 @@ echo "Done"
 
 # configs
 printf "Copying config files......\n\n\n"
-cp ~/.config/dotfiles/configs/* ~/.config/ -r
-cp ~/.config/dotfiles/configs/.* ~/.config/ -r
+cp ~/.config/dotfiles/configs/* ~/.config/ -r # Copying configs
+cp ~/.config/dotfiles/configs/.* ~/.config/ -r # Copying configs
 cp ~/.config/dotfiles/scripts/* ~/devel/scripts/ -r # Copying scripts
 echo "Done"
 
@@ -54,6 +59,7 @@ echo "Done"
 
 # Autostart stuff
 cp ~/.config/dotfiles/dotfiles/.* ~/
+
 # ST terminal
 printf "Installing the terminal......\n\n\n"
 git clone https://github.com/siduck/st ~/.config/st 
@@ -66,6 +72,7 @@ printf "Installing Browser......\n\n\n"
 installpkgaur "brave-bin"
 echo "Done"
 
+# install filebrowser
 printf "Installing lf......\n\n\n"
 installpkgaur "lf-bin"
 echo "Done"
@@ -77,7 +84,7 @@ mkdir ~/.SpaceVim.d/
 cp ~/.config/dotfiles/init.toml  ~/.SpaceVim.d/init.toml # copying my spacevim config
 echo "Done"
 
-# zsh todo add zshrc and zprofile to repo and copy them over , use zsh as standart shell
+# install zsh plugins
 printf "Installing zshell......\n\n\n"
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/zsh-syntax-highlighting
