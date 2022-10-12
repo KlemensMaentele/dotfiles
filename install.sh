@@ -30,9 +30,8 @@ echo "Done"
 
 # Install yay
 printf "Installing yay aur helper......\n\n\n"
-cd ~/.local/share
-git clone https://aur.archlinux.org/yay.git
-cd ./yay
+git clone https://aur.archlinux.org/yay.git ~/.local/share/yay
+cd ~/.local/share/yay
 makepkg -si --needed --noconfirm
 echo "Done"
 
