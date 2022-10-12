@@ -79,6 +79,10 @@ default_height = 30
   emmet_filetyps = ['html']
 
 [[layers]]
+  name = "lang#java"
+  format_on_save = true
+
+[[layers]]
   name = "git"
 
 [[layers]]
