@@ -45,6 +45,7 @@ printf "Copying config files......\n\n\n"
 cp ~/.config/dotfiles/configs/* ~/.config/ -r # Copying configs
 cp ~/.config/dotfiles/configs/.* ~/.config/ -r # Copying configs
 cp ~/.config/dotfiles/scripts/* ~/devel/scripts/ -r # Copying scripts
+cp ~/.config/dotfiles/wallpaper/* ~/Pictures/wallpaper # Copy wallpapers
 echo "Done"
 
 # ChadWM
@@ -57,7 +58,8 @@ cp ~/.config/chadwm/fonts/* ~/.local/share/fonts/
 echo "Done"
 
 # Autostart stuff
-cp ~/.config/dotfiles/dotfiles/.* ~/
+cp ~/.config/dotfiles/dotfiles/.* ~/ # copy over dotfiles
+cp ~/.config/dotfiles/wallpaper/Cliffs\ of\ the\ Porte\ d\'Aval.png ~/Pictures/wallpaper/wall.png
 
 # ST terminal
 printf "Installing the terminal......\n\n\n"
