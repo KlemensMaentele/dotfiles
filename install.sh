@@ -19,13 +19,18 @@ echo "Done"
 # Stuff you need
 printf "Installing dependencies......\n\n\n"
 sudo pacman -S --noconfirm --needed - < pkglist.txt
+
+# Services you'll want
 sudo systemctl enable tlp --now # For better power management and longer battery runtime
+sudo systemctl enable cups --now # For printing support
+sudo systemctl enable ipp-usb --now # For usb scanner connection support
 
 # setup folders
-mkdir ~/.local/share/ -p
+mkdir ~/.local/share/ -p 
 mkdir ~/Music/
 mkdir ~/devel/scripts/ -p
 mkdir ~/Pictures/wallpaper/ -p
+mkdir ~/.npm-global
 echo "Done"
 
 # Install yay
@@ -78,11 +83,13 @@ printf "Installing lf......\n\n\n"
 installpkgaur "lf-bin"
 echo "Done"
 
+# setting up npm to be able to install globally without sudo permissions
+npm config set prefix '~/.npm-global'
+export PATH=~/.npm-global/bin:$PATH
+
 # SpaceVim
 printf "Installing neovim......\n\n\n"
-curl -sLf https://spacevim.org/install.sh | bash
-mkdir ~/.SpaceVim.d/
-cp ~/.config/dotfiles/init.toml  ~/.SpaceVim.d/init.toml # copying my spacevim config
+bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 echo "Done"
 
 # install zsh plugins

@@ -6,9 +6,11 @@ tlp
 python-pip
 gcc
 zsh
+rust
 man-db
 make
-nodejs
+nodejs-lts-gallium
+npm
 
 feh
 git
@@ -33,7 +35,6 @@ picom
 zathura
 zathura-pdf-poppler
 
-ranger
 ueberzug
 ffmpegthumbnailer
 lynx
@@ -44,17 +45,6 @@ poppler
 odt2txt
 
 neovim
-python-pylint
-yapf
-python-isort
-python-pynvim
-python-jedi
-clang
-php
-ctags
-npm
-prettier
-vscode-html-languageserver
 
 xclip
 mesa
@@ -73,3 +63,12 @@ imlib2
 gd
 ntfs-3g
 openssh
+
+cups
+cups-pdf
+sane
+sane-airscan
+simple-scan
+ipp-usb
+usbutils
+system-config-printer
