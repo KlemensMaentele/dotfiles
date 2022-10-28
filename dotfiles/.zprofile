@@ -1,8 +1,8 @@
 #!/bin/zsh
 # ~/.bash_profile
 #
-
-export EDITOR="nvim"
+export PATH=~/.npm-global/bin:$PATH
+export EDITOR="lvim"
 export TERMINAL="st"
 export BROWSER="brave"
 
