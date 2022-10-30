@@ -58,7 +58,7 @@ export TERMINAL=/usr/local/bin/st
 export PATH="$HOME/devel/scripts/:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export BROWSER=/usr/bin/brave
-
+export _JAVA_AWT_WM_NONREPARENTING=1 # fixes problems with Java gui applications
 # End of lines added by compinstallsource
 
 source ~/.config/zsh/calc.plugin.zsh/calc.plugin.zsh
