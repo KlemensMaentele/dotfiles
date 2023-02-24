@@ -43,17 +43,16 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 #Aliases
 alias p="sudo pacman"
 alias ss="sudo systemctl"
-alias nv="lvim"
 alias snv="sudoedit"
 alias ls="ls -hN --color=auto"
 alias grep="grep --color=auto"
-alias ra="ranger"
 alias sp="sudo poweroff"
 alias please="sudo"
 alias mirror="mpv av://v4l2:/dev/video0 --profile=low-latency --untimed"
 alias lf="lfub"
 
-export EDITOR=~/.local/bin/lvim
+[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
+export EDITOR=~/usr/bin/nvim
 export TERMINAL=/usr/local/bin/st
 export PATH="$HOME/devel/scripts/:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
