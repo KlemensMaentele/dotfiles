@@ -83,15 +83,6 @@ printf "Installing lf......\n\n\n"
 installpkgaur "lf-bin"
 echo "Done"
 
-# setting up npm to be able to install globally without sudo permissions
-npm config set prefix '~/.npm-global'
-export PATH=~/.npm-global/bin:$PATH
-
-# SpaceVim
-printf "Installing neovim......\n\n\n"
-bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
-echo "Done"
-
 # install zsh plugins
 printf "Installing zshell......\n\n\n"
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh/zsh-autosuggestions

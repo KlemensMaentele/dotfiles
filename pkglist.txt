@@ -6,11 +6,8 @@ tlp
 python-pip
 gcc
 zsh
-rust
 man-db
 make
-nodejs-lts-gallium
-npm
 
 feh
 git
