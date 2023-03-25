@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -v "searchhist" ~/.config/zsh/.histfile -a | grep "$@" --color=auto  
+grep -v "searchhist" ~/.config/zsh/.histfile -a | grep "$@" -i --color=auto  
