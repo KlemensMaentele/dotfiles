@@ -30,6 +30,7 @@ mkdir ~/.local/share/ -p
 mkdir ~/Music/
 mkdir ~/devel/scripts/ -p
 mkdir ~/Pictures/wallpaper/ -p
+mkdir ~/Pictures/Screenshots/ -p
 mkdir ~/.npm-global
 echo "Done"
 
@@ -38,11 +39,6 @@ printf "Installing yay aur helper......\n\n\n"
 git clone https://aur.archlinux.org/yay.git ~/.local/share/yay
 cd ~/.local/share/yay
 makepkg -si --needed --noconfirm
-echo "Done"
-
-# Font
-printf "Installing font......\n\n\n"
-installpkgaur "nerd-fonts-jetbrains-mono"
 echo "Done"
 
 # configs

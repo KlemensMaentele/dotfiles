@@ -41,9 +41,11 @@ atool
 mediainfo
 poppler
 odt2txt
+scrot
 
 neovim
 
+ttf-jetbrains-mono-nerd
 xclip
 mesa
 libx11

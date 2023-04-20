@@ -50,6 +50,7 @@ alias sp="sudo poweroff"
 alias please="sudo"
 alias mirror="mpv av://v4l2:/dev/video0 --profile=low-latency --untimed"
 alias lf="lfub"
+alias screenshot="scrot /home/$USER/Pictures/Screenshots/'%Y-%m-%d-%X.png'"
 
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 export EDITOR=~/usr/bin/nvim
