@@ -29,8 +29,6 @@ sudo systemctl enable ipp-usb --now # For usb scanner connection support
 mkdir ~/.local/share/ -p 
 mkdir ~/Music/
 mkdir ~/devel/scripts/ -p
-mkdir ~/Pictures/wallpaper/ -p
-mkdir ~/Pictures/Screenshots/ -p
 mkdir ~/.npm-global
 echo "Done"
 
@@ -46,7 +44,7 @@ printf "Copying config files......\n\n\n"
 cp ~/.config/dotfiles/configs/* ~/.config/ -r # Copying configs
 cp ~/.config/dotfiles/configs/.* ~/.config/ -r # Copying configs
 cp ~/.config/dotfiles/scripts/* ~/devel/scripts/ -r # Copying scripts
-cp ~/.config/dotfiles/wallpaper/* ~/Pictures/wallpaper # Copy wallpapers
+cp ~/.config/dotfiles/Pictures ~/ -r # Copy wallpapers
 echo "Done"
 
 # ChadWM
@@ -60,7 +58,6 @@ echo "Done"
 
 # Autostart stuff
 cp ~/.config/dotfiles/dotfiles/.* ~/ # copy over dotfiles
-cp ~/.config/dotfiles/wallpaper/Cliffs\ of\ the\ Porte\ d\'Aval.png ~/Pictures/wallpaper/wall.png
 
 # ST terminal
 printf "Installing the terminal......\n\n\n"
