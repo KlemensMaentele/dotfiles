@@ -50,6 +50,32 @@ So after changing config.h cd into ~/.config/chadwm/chadwm/ and recompile:
 cd ~/.config/chadwm/chadwm/
 sudo make install
 ```
+
+### Keyboard
+##### Repeat interval
+I like to set the keyboard repeat interval in /etc/X11/xorg.conf.d/00-keyboard.conf
+```
+Section "InputClass"
+...
+Option "AutoRepeat" "200 20"
+...
+EndSection
+```
+
+##### Layout
+I do switch capslock and escape for better vim usage also in /etc/X11/xorg.conf.d/00-keyboard.conf
+
+```
+Section "InputClass"
+...
+Option "XkbOptions" "caps:swapescape"
+...
+EndSection
+```
+
+If you want to use multiple Options use the following syntax: https://github.com/swaywm/sway/issues/4152
+
+
 To see your changes press ctrl + windows + q which will stop the desktop environment and type startx to start it again.
 ## Credits
 - https://github.com/siduck/ for his chadwm and ST build
