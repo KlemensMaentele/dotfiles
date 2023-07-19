@@ -53,7 +53,7 @@ alias lf="lfub"
 alias screenshot="scrot /home/$USER/Pictures/Screenshots/'%Y-%m-%d-%X.png'"
 
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
-export EDITOR=~/usr/bin/nvim
+export EDITOR=/usr/bin/nvim
 export TERMINAL=/usr/local/bin/st
 export PATH="$HOME/devel/scripts/:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
