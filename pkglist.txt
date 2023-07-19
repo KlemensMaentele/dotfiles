@@ -3,6 +3,9 @@ zip
 unzip
 tlp
 
+openresolv
+wireguard-tools
+
 python-pip
 gcc
 zsh
