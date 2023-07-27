@@ -21,6 +21,7 @@ z
 mpv
 libdvdcss
 
+thunderbird
 gparted
 qbittorrent
 htop
