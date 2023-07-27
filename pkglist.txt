@@ -49,6 +49,9 @@ scrot
 neovim
 
 ttf-jetbrains-mono-nerd
+noto-fonts-emoji
+noto-fonts-cjk
+
 xclip
 mesa
 libx11
