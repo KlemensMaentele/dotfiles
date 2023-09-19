@@ -11,4 +11,4 @@ xset r rate 200 50 & # sets keyboard polling rate
 
 # run bar script and dwm ( do not remove this )
 bash ~/devel/scripts/system/bar-laptop.sh &  # swap out bar-desktop.sh with bar-laptop.sh when using a laptop for brightness and battery icons
-dwm
+chadwm
